@@ -5,24 +5,42 @@ void main() => runApp(AnimalAgeApp());
 
 Expanded animalCard({Color color, String animalName}) {
   return Expanded(
-    child: Container(
-      margin: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 5.0),
-      height: 80.0,
-      child: TextButton.icon(
-        label: Text(
-          '$animalName',
-          style: GoogleFonts.cabin(
-            color: Colors.grey[800],
-            fontSize: 18.0,
+    child: Card(
+      color: color,
+      child: Column(
+        children: [
+          ListTile(
+            //tileColor: color,
+            leading: Column(
+              children: [
+                CircleAvatar(
+                  backgroundImage: AssetImage(
+                    'assets/images/image_placeholder.png',
+                  ),
+                  radius: 25.0,
+                ),
+              ],
+            ),
+            title: Text(
+              '$animalName',
+              style: GoogleFonts.cabin(
+                color: Colors.grey[700],
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            subtitle: Text(
+              'subtext for card',
+            ),
+            trailing: Icon(
+              Icons.info,
+              size: 40.0,
+            ),
+            onTap: () {
+              print('the $animalName card has been tapped');
+            },
           ),
-        ),
-        icon: Image(
-          image: AssetImage('assets/images/image_placeholder.png'),
-          height: 30.0,
-        ),
-        style: TextButton.styleFrom(
-            backgroundColor: color, alignment: Alignment.topLeft),
-        onPressed: () {},
+        ],
       ),
     ),
   );
@@ -44,8 +62,9 @@ class AnimalAgeApp extends StatelessWidget {
           ),
         ),
         body: SafeArea(
-          child: ListView(
-            children: [
+          child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
               animalCard(color: Colors.red[200], animalName: 'Dog'),
               animalCard(color: Colors.green[200], animalName: 'Cat'),
               animalCard(color: Colors.blue[200], animalName: 'Snake'),
