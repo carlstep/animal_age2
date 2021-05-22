@@ -20,7 +20,8 @@ Expanded animalCard({Color color, String animalName}) {
           image: AssetImage('assets/images/image_placeholder.png'),
           height: 30.0,
         ),
-        style: TextButton.styleFrom(backgroundColor: color),
+        style: TextButton.styleFrom(
+            backgroundColor: color, alignment: Alignment.topLeft),
         onPressed: () {},
       ),
     ),
