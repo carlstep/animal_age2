@@ -7,21 +7,21 @@ Widget animalCard({Color color, String animalName}) {
   return Expanded(
     child: Card(
       color: color,
-      child: Column(
-        children: [
-          ListTile(
-            //tileColor: color,
-            leading: Column(
-              children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/images/image_placeholder.png',
-                  ),
-                  radius: 25.0,
-                ),
-              ],
+      child: ListTile(
+        //tileColor: color,
+        leading: Column(
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage(
+                'assets/images/image_placeholder.png',
+              ),
+              radius: 25.0,
             ),
-            title: Text(
+          ],
+        ),
+        title: Row(
+          children: [
+            Text(
               '$animalName',
               style: GoogleFonts.cabin(
                 color: Colors.grey[700],
@@ -29,18 +29,18 @@ Widget animalCard({Color color, String animalName}) {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text(
-              'subtext for card',
-            ),
-            trailing: Icon(
-              Icons.info,
-              size: 40.0,
-            ),
-            onTap: () {
-              print('the $animalName card has been tapped');
-            },
-          ),
-        ],
+          ],
+        ),
+        subtitle: Text(
+          'subtext for card',
+        ),
+        trailing: Icon(
+          Icons.info,
+          size: 40.0,
+        ),
+        onTap: () {
+          print('the $animalName card has been tapped');
+        },
       ),
     ),
   );
