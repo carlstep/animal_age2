@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(AnimalAgeApp());
 
-Expanded animalCard({Color color, String animalName}) {
+Widget animalCard({Color color, String animalName}) {
   return Expanded(
     child: Card(
       color: color,
